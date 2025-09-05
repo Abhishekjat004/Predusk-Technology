@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RAG Web App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>📚 RAG Web Application</h1>
+
+        <!-- File & Text Upload -->
+        <section class="card">
+            <h2>Upload Document or Enter Text</h2>
+            <form id="uploadForm">
+                <input type="file" id="file" name="file" accept=".pdf">
+                <textarea id="text" name="text" placeholder="Or type/paste text here..."></textarea>
+                <button type="submit">Upload</button>
+            </form>
+            <p id="uploadStatus"></p>
+        </section>
+
+        <!-- Ask Question -->
+        <section class="card">
+            <h2>Ask a Question</h2>
+            <form id="askForm">
+                <input type="text" id="question" placeholder="Enter your question..." required>
+                <button type="submit">Ask</button>
+            </form>
+        </section>
+
+        <!-- Results -->
+        <section class="card">
+            <h2>Answer</h2>
+            <div id="answerBox">
+                <div id="spinner" class="spinner hidden"></div>
+                <p id="answerText">Your answer will appear here...</p>
+            </div>
+
+
+            <div id="stats">
+                <p><b>⏱ Runtime:</b> <span id="runtime">-</span> sec</p>
+                <p><b>🔢 Tokens Used:</b> <span id="tokens">-</span></p>
+            </div>
+
+            <h3>Sources</h3>
+            <ul id="sources"></ul>
+        </section>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
