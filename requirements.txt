@@ -8,3 +8,5 @@ pdfplumber
 pypdf
 pinecone
 cohere
+flask
+werkzeug
