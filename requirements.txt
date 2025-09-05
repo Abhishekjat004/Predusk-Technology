@@ -1,0 +1,10 @@
+langchain
+langchain-community
+langchain-pinecone
+langchain-google-genai
+google-generativeai
+python-dotenv
+pdfplumber
+pypdf
+pinecone
+cohere
