@@ -11,11 +11,11 @@ When a user asks a question:
 3. Cohere reranks results for accuracy.
 4. Gemini generates the final context-based answer.
 
-**----------------------------------------------------------------------------------------------------------------------------------------------------------**
+**--------------------------------------------------------------------------------------------------------------------------------------------------**
 
 ## 🏗️ Architecture
 ![Architecture Diagram](./architecture.png) 
-![Cohere Architecture Diagram](./architecture.png) 
+![Cohere Architecture Diagram](./cohere.png) 
 
 **Workflow:**
 1. **Upload PDF/Text** → Process & Chunk → Store in Pinecone  
@@ -24,7 +24,7 @@ When a user asks a question:
 4. **Reranker** (Cohere)  
 5. **Answer Generator** (Gemini with context)  
 
----
+
 **----------------------------------------------------------------------------------------------------------------------------------------------------**
 ## ⚙️ Configuration
 
@@ -39,6 +39,7 @@ When a user asks a question:
 Retriever: Pinecone Vector DB (Google Generative AI embeddings)
 
 Reranker: Cohere Rerank v3.0
+
 **----------------------------------------------------------------------------------------------------------------------------------------------------**
 
 ### 🌐 Providers Used
@@ -57,10 +58,11 @@ Reranker: Cohere Rerank v3.0
 This project is deployed on Render.
 
 🔗 Live App: https://predusk-technology-1.onrender.com
+
 **-------------------------------------------------------------------------------------------------------------------------------------------------------------**
 ### 📝 Remarks
 
-### ⚠️ Gemini:
+**⚠️ Gemini:**
 I use Gemini API KEY for LLM and Embedding. it is free but limited to access.
 
 In Following Table showing the limit of Gemini:
@@ -74,7 +76,7 @@ In Following Table showing the limit of Gemini:
 | Alternate user report	    |    About 500/day                  |
 -----------------------------------------------------------------
 
-### ⚠️ Cohere:
+**⚠️ Cohere:**
 
 I use Cohere free api key but it is limited to access (10  request per min)
 
@@ -84,7 +86,7 @@ I use Cohere free api key but it is limited to access (10  request per min)
 | Rerank	       |  10/min            |
 ---------------------------------------
 
-### ⚠️ Pinecone 
+**⚠️ Pinecone** 
 
 In Following Table showing the limit of Pinecone:
 
