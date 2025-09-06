@@ -120,19 +120,29 @@ In Following Table showing the limit of Pinecone:
 ### What I do next:
 
 **1. Control Token Usage (Gemini Limits):**
+
 a. Keep chunk size 300–500 tokens → avoids hitting the 1,048,576 token input limit.
+
 b. Use batch embedding (embed multiple chunks per request) to save requests.
+
 c. Cache embeddings locally → don’t re-embed the same text again.
+
 d. For answers, set max_output_tokens=512–1024 (don’t always allow 8,192).
 
 **2. Manage Request Quota:**
+
 a. Gemini: Stay below ~1,500 requests/day → process documents in batches (not one request per small chunk).
+
 b. Cohere: Because rerank = only 10 requests/min, use it only for important queries (not every query).
+
 c. Pinecone: Monitor read/write units → stay within 100k–300k vectors (free storage).
 
 **3. Efficient Retrieval Strategy:**
+
 a. First use Pinecone (top_k=10) to fetch relevant chunks.
+
 b. If requests are cheap (not hitting limits), use Cohere Rerank on those 10 → keep best 3–5.
+
 c. If hitting limits, skip Cohere and directly send Pinecone’s top 5 to Gemini.
 
 **---------------------------------------------------------------------------------------------------------------------------------------------------------**
