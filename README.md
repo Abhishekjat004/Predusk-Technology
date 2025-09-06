@@ -1,5 +1,6 @@
 # Predusk-Technology
 
+## Resume Link: https://drive.google.com/file/d/10imEppnLZEI072-VNTXUW5cV1llxtWzN/view?usp=sharing
 # 📘 AI-Powered PDF or Plain Text Q&A System
 
 ## 🚀 Overview
@@ -123,11 +124,7 @@ In Following Table showing the limit of Pinecone:
 
 a. Keep chunk size 300–500 tokens → avoids hitting the 1,048,576 token input limit.
 
-b. Use batch embedding (embed multiple chunks per request) to save requests.
-
-c. Cache embeddings locally → don’t re-embed the same text again.
-
-d. For answers, set max_output_tokens=512–1024 (don’t always allow 8,192).
+b. For answers, set max_output_tokens=512–1024 (don’t always allow 8,192).
 
 **2. Manage Request Quota:**
 
