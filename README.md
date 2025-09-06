@@ -1,4 +1,4 @@
-<img width="1100" height="674" alt="image" src="https://github.com/user-attachments/assets/5d94e19e-ec7a-4da4-bd55-ade1274c187c" /># Predusk-Technology
+# Predusk-Technology
 
 # 📘 AI-Powered PDF or Plain Text Q&A System
 
@@ -58,33 +58,36 @@ This project is deployed on Render.
 📝 Remarks
 ⚠️ Free tier limits on Gemini, Cohere and Pinecone may restrict requests.
 
-# Gemini:
+⚠️ Gemini:
 I use Gemini API KEY for LLM and Embedding. it is free but limited to access.
 
 In Following Table showing the limit of Gemini:
+
 -----------------------------------------------------------------
 | Limit Type	              |    Free Tier Value                |
------------------------------------------------------------------
+| ------------------------- | --------------------------------- |
 | Max input tokens	        |    1,048,576 tokens per request   |
 | Max output tokens	        |    8,192 tokens per response      |
 | Estimated daily requests	|    Around 1,500/day per guide     | 
 | Alternate user report	    |    About 500/day                  |
 -----------------------------------------------------------------
 
-# Cohere:
+⚠️ Cohere:
 I use Cohere free api key but it is limited to access (10  request per min)
+
 ---------------------------------------
 | Endpoint       |	Trial rate limit  |	
----------------------------------------
+| -------------- | ------------------ |
 | Rerank	       |  10/min            |
 ---------------------------------------
 
-⚠️ Pinecone free index has size & query limits.
+⚠️ Pinecone 
 
 In Following Table showing the limit of Pinecone:
+
 -------------------------------------------------------------------------------------------------------------------
 | Resource/Limit                                 |  Value                                                          |
-| ---------------------------------------------- | -------------------------------------------------------------- |
+| ---------------------------------------------- | --------------------------------------------------------------  |
 | Read Units (monthly)                           |  1,000,000                                                      |
 | Write Units (monthly)                          |  2,000,000                                                      |
 | Upsert Size (per sec)                          |  50 MB per namespace                                            |
