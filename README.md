@@ -14,7 +14,7 @@ When a user asks a question:
 ---
 
 ## 🏗️ Architecture
-![Architecture Diagram](./architecture.png) <!-- Add your diagram -->
+![Architecture Diagram](./architecture.png) 
 
 **Workflow:**
 1. **Upload PDF/Text** → Process & Chunk → Store in Pinecone  
@@ -29,18 +29,18 @@ When a user asks a question:
 
 ### 📑 Chunking Parameters
 
-chunk_size: 1000  (which is basically between 800-1200 tokens)
+**chunk_size:**  1000  (which is basically between 800-1200 tokens)
 
-chunk_overlap: 150  (which is 15% of chunk size)
+**chunk_overlap:** 150  (which is 15% of chunk size)
 
 
-🔍 Retriever / Reranker
+### 🔍 Retriever / Reranker
 Retriever: Pinecone Vector DB (Google Generative AI embeddings)
 
 Reranker: Cohere Rerank v3.0
 
 
-🌐 Providers Used
+### 🌐 Providers Used
 Google Generative AI (Embeddings + Gemini Model)
 
 Cohere API (Reranking)
@@ -51,14 +51,15 @@ Flask (Backend Framework)
 
 
 
-🌍 Deployment
+### 🌍 Deployment
+
 This project is deployed on Render.
-🔗 Live App: [http://localhost:5000](https://predusk-technology-1.onrender.com/)
 
-📝 Remarks
-⚠️ Free tier limits on Gemini, Cohere and Pinecone may restrict requests.
+🔗 Live App: https://predusk-technology-1.onrender.com
 
-⚠️ Gemini:
+### 📝 Remarks
+
+### ⚠️ Gemini:
 I use Gemini API KEY for LLM and Embedding. it is free but limited to access.
 
 In Following Table showing the limit of Gemini:
@@ -72,7 +73,8 @@ In Following Table showing the limit of Gemini:
 | Alternate user report	    |    About 500/day                  |
 -----------------------------------------------------------------
 
-⚠️ Cohere:
+### ⚠️ Cohere:
+
 I use Cohere free api key but it is limited to access (10  request per min)
 
 ---------------------------------------
@@ -81,7 +83,7 @@ I use Cohere free api key but it is limited to access (10  request per min)
 | Rerank	       |  10/min            |
 ---------------------------------------
 
-⚠️ Pinecone 
+### ⚠️ Pinecone 
 
 In Following Table showing the limit of Pinecone:
 
@@ -106,7 +108,7 @@ In Following Table showing the limit of Pinecone:
 | Free Plan Storage After Serverless Upgrade     |  ~300,000 records (~2 GB)                                       |
 -------------------------------------------------------------------------------------------------------------------
 
-🚀 Improvements to consider:
+### 🚀 Improvements to consider:
 
 1. Add authentication & user accounts.
 
