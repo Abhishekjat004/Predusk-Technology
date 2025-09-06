@@ -111,8 +111,32 @@ In Following Table showing the limit of Pinecone:
 | Free Plan Storage After Serverless Upgrade     |  ~300,000 records (~2 GB)                                       |
 -------------------------------------------------------------------------------------------------------------------
 
+### Trade-off
+
+1. Smaller chunks: Better precision (answers are more exact) ✅ but worse recall (may miss some context) ❌.
+
+2. Larger chunks: Better recall (more context covered) ✅ but worse precision (irrelevant info may mix in) ❌
+
+### What I do next:
+
+1. Control Token Usage (Gemini Limits):
+Keep chunk size 300–500 tokens → avoids hitting the 1,048,576 token input limit.
+Use batch embedding (embed multiple chunks per request) to save requests.
+Cache embeddings locally → don’t re-embed the same text again.
+For answers, set max_output_tokens=512–1024 (don’t always allow 8,192).
+
+2. Manage Request Quota:
+Gemini: Stay below ~1,500 requests/day → process documents in batches (not one request per small chunk).
+Cohere: Because rerank = only 10 requests/min, use it only for important queries (not every query).
+Pinecone: Monitor read/write units → stay within 100k–300k vectors (free storage).
+
+3. Efficient Retrieval Strategy:
+First use Pinecone (top_k=10) to fetch relevant chunks.
+If requests are cheap (not hitting limits), use Cohere Rerank on those 10 → keep best 3–5.
+If hitting limits, skip Cohere and directly send Pinecone’s top 5 to Gemini.
+
 **---------------------------------------------------------------------------------------------------------------------------------------------------------**
-### Minimal Evaluation
+### 📊 Minimal Evaluation
 
 **Perfect 👍 I created 5 Q/A pairs. I can use these as your gold set for evaluation of your RAG system.**
 
@@ -150,7 +174,7 @@ RAG answer: The provided document mentions these tree traversal strategies:
 2. Postorder
 3. It also refers to inorder traversal.
 
-**📊 Minimal Evaluation Note**
+**📊 Summary**
 
 **Number of Q/A pairs tested: 5**
 
