@@ -11,10 +11,11 @@ When a user asks a question:
 3. Cohere reranks results for accuracy.
 4. Gemini generates the final context-based answer.
 
----
+**--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
 
 ## 🏗️ Architecture
 ![Architecture Diagram](./architecture.png) 
+![Cohere Architecture Diagram](./architecture.png) 
 
 **Workflow:**
 1. **Upload PDF/Text** → Process & Chunk → Store in Pinecone  
@@ -24,7 +25,7 @@ When a user asks a question:
 5. **Answer Generator** (Gemini with context)  
 
 ---
-
+**--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
 ## ⚙️ Configuration
 
 ### 📑 Chunking Parameters
@@ -33,30 +34,30 @@ When a user asks a question:
 
 **chunk_overlap:** 150  (which is 15% of chunk size)
 
-
+**--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
 ### 🔍 Retriever / Reranker
 Retriever: Pinecone Vector DB (Google Generative AI embeddings)
 
 Reranker: Cohere Rerank v3.0
-
+**--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
 
 ### 🌐 Providers Used
-Google Generative AI (Embeddings + Gemini Model)
+1. Google Generative AI (Embeddings + Gemini Model)
 
-Cohere API (Reranking)
+2. Cohere API (Reranking)
 
-Pinecone (Vector Database)
+3. Pinecone (Vector Database)
 
-Flask (Backend Framework)
+4. Flask (Backend Framework)
 
-
+**--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
 
 ### 🌍 Deployment
 
 This project is deployed on Render.
 
 🔗 Live App: https://predusk-technology-1.onrender.com
-
+**--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
 ### 📝 Remarks
 
 ### ⚠️ Gemini:
@@ -108,6 +109,7 @@ In Following Table showing the limit of Pinecone:
 | Free Plan Storage After Serverless Upgrade     |  ~300,000 records (~2 GB)                                       |
 -------------------------------------------------------------------------------------------------------------------
 
+**--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
 ### 🚀 Improvements to consider:
 
 1. Add authentication & user accounts.
