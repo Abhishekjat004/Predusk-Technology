@@ -208,6 +208,7 @@ def ask_question():
 
 # ---------- Run Flask ----------
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # Railway gives you a PORT env var
+    port = int(os.environ.get("PORT", 5000))  # Render gives a PORT env var
     app.run(host="0.0.0.0", port=port)  
+
 
