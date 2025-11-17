@@ -156,8 +156,7 @@ def chat_with_gemini(query: str, context: str) -> str:
 
     model = genai.GenerativeModel(
         "gemini-2.0-flash",
-        system_instruction=f"""You have to behave like a Data Structure and Algorithm Expert.
-        You will be given a context of relevant information and a user question.
+        system_instruction=f"""You will be given a context of relevant information and a user question.
         Your task is to answer the user's question based ONLY on the provided context.
         If the answer is not in the context, you must say:
         "I could not find the answer in the provided document."
@@ -210,5 +209,6 @@ def ask_question():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Render gives a PORT env var
     app.run(host="0.0.0.0", port=port)  
+
 
 
