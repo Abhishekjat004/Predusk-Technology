@@ -1,4 +1,4 @@
-# Predusk-Technology
+
 
 ## Resume Link: https://drive.google.com/file/d/10imEppnLZEI072-VNTXUW5cV1llxtWzN/view?usp=sharing
 # 📘 AI-Powered PDF or Plain Text Q&A System
