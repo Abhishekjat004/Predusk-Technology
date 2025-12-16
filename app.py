@@ -9,7 +9,7 @@ from werkzeug.utils import secure_filename
 from langchain_pinecone import PineconeVectorStore
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
-from langchain.docstore.document import Document
+from langchain_core.documents import Document
 import cohere
 
 
@@ -209,6 +209,7 @@ def ask_question():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Render gives a PORT env var
     app.run(host="0.0.0.0", port=port)  
+
 
 
 
