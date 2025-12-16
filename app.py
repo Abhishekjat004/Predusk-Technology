@@ -155,7 +155,7 @@ def chat_with_gemini(query: str, context: str) -> str:
     History.append({"role": "user", "parts": [{"text": query}]})
 
     model = genai.GenerativeModel(
-        "gemini-2.0-flash",
+        "gemini-2.5-flash",
         system_instruction=f"""You will be given a context of relevant information and a user question.
         Your task is to answer the user's question based ONLY on the provided context.
         If the answer is not in the context, you must say:
@@ -209,6 +209,7 @@ def ask_question():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Render gives a PORT env var
     app.run(host="0.0.0.0", port=port)  
+
 
 
 
