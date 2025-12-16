@@ -7,7 +7,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import google.generativeai as genai
 from werkzeug.utils import secure_filename
 from langchain_pinecone import PineconeVectorStore
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.docstore.document import Document
 import cohere
@@ -209,6 +209,7 @@ def ask_question():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Render gives a PORT env var
     app.run(host="0.0.0.0", port=port)  
+
 
 
 
