@@ -98,7 +98,7 @@ def transform_query(question: str) -> str:
     History.append({"role": "user", "parts": [{"text": question}]})
 
     model = genai.GenerativeModel(
-        "gemini-2.0-flash",
+        "gemini-2.5-flash",
         system_instruction="""You are a query rewriting expert.
         Based on the provided chat history, rephrase the "Follow Up user Question"
         into a complete, standalone question that can be understood without the chat history.
@@ -209,6 +209,7 @@ def ask_question():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))  # Render gives a PORT env var
     app.run(host="0.0.0.0", port=port)  
+
 
 
 
